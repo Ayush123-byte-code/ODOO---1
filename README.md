@@ -10,11 +10,6 @@
 <p align="center">
     <b>Plan • Organize • Explore • Travel Smart</b>
 </p>
-
----
-
-![Traveloop Banner](https://images.unsplash.com/photo-1507525428034-b723cf961d3e)
-
 ---
 
 # 📌 Problem Statement
