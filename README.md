@@ -1,124 +1,187 @@
-# Traveloop 🌍✈️
+<p align="center">
+  <img src="screenshots/dashboard.png" width="100%">
+</p>
 
-> Personalized Travel Planning Made Easy
+<h1 align="center">🌍 Traveloop ✈️</h1>
 
-Traveloop is a modern full-stack travel planning platform that helps users create personalized multi-city itineraries, manage expenses, discover destinations, organize activities, and share travel experiences with the community.
+<p align="center">
+  Personalized Travel Planning Made Easy
+</p>
 
-Built as a hackathon project, Traveloop combines intelligent trip organization with a beautiful and user-friendly interface.
+<p align="center">
+  <img src="https://img.shields.io/badge/Django-6.0-green?style=for-the-badge&logo=django">
+  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap">
+  <img src="https://img.shields.io/badge/Hackathon-Project-orange?style=for-the-badge">
+</p>
+
+---
+
+# 🌍 Traveloop
+
+> Intelligent Multi-City Travel Planning Platform
+
+Traveloop is a modern full-stack travel planning web application that helps users organize trips, manage budgets, discover destinations, create itineraries, and share travel experiences with the community.
+
+Built as a hackathon project using Django, Traveloop focuses on solving real-world travel planning challenges through intelligent organization and user-friendly design.
 
 ---
 
 # 🚀 Features
 
 ## 🔐 Authentication System
-- User Registration & Login
-- Secure Authentication
-- Forgot Password Support
-- Profile Management
+
+- User Registration
+- Secure Login & Logout
+- Password Reset
+- User Profile Management
+- Session Authentication
+
+---
 
 ## 🏠 Dashboard
-- Overview of Trips
-- Recommended Destinations
+
+- Personalized Dashboard
+- Recent Trips Overview
 - Budget Highlights
-- Quick Trip Planning
+- Quick Access Features
+- Recommended Destinations
+
+---
 
 ## 🧳 Trip Management
-- Create New Trips
+
+- Create Trips
 - Multi-City Itinerary Builder
 - Add Stops & Activities
-- Trip Timeline Visualization
 - Day-wise Planning
+- Timeline View
+- Edit & Delete Trips
+
+---
 
 ## 📍 Destination & Activity Search
-- Search Cities Worldwide
-- Explore Activities
-- Filter by Budget & Type
-- Add Activities to Trips
+
+- Explore Destinations
+- Search Activities
+- Activity Categories
+- Budget Filtering
+- Travel Suggestions
+
+---
 
 ## 💰 Budget Management
+
 - Expense Tracking
 - Budget Breakdown
-- Daily Cost Estimation
-- Expense Invoice Generation
-- Analytics Charts
+- Daily Cost Calculation
+- Expense Analytics
+- Invoice Generation
+- Charts & Statistics
+
+---
 
 ## 📝 Travel Utilities
+
 - Packing Checklist
-- Travel Notes / Journal
+- Travel Journal / Notes
 - Daily Reminders
 - Checklist Categories
 
+---
+
 ## 🌐 Community Features
-- Public Trip Sharing
-- Community Travel Feed
-- Copy Shared Trips
-- Inspiration Gallery
+
+- Share Trips Publicly
+- Community Feed
+- Travel Inspiration
+- Copy Shared Itineraries
+
+---
 
 ## 👨‍💼 Admin Dashboard
+
 - User Analytics
-- Popular Destinations
 - Platform Statistics
-- Activity Insights
+- Popular Destinations
+- Expense Insights
+- Community Monitoring
 
 ---
 
-# 🖼️ Application Screens
-
-## 📌 Authentication
-- Login Screen
-- Registration Screen
-
-## 📌 Trip Planning
-- Dashboard
-- Create Trip
-- Itinerary Builder
-- Trip Listing
-- Itinerary View
-
-## 📌 User Features
-- User Profile
-- Activity Search
-- Packing Checklist
-- Travel Notes
-- Expense Invoice
-
-## 📌 Community & Admin
-- Community Feed
-- Shared Itinerary
-- Admin Dashboard
+# 🖼️ Application Screenshots
 
 ---
 
-# 🎨 UI/UX Mockups
+## 📌 Dashboard
 
-## Login & Registration
-![Login](assets/login-register.png)
+![Dashboard](screenshots/dashboard.png)
 
-## Dashboard & Create Trip
-![Dashboard](assets/dashboard.png)
+---
 
-## Itinerary & Community
-![Itinerary](assets/itinerary.png)
+## 📌 Create Trip
+
+![Create Trip](screenshots/create-trip.png)
+
+---
+
+## 📌 Itinerary Planner
+
+![Itinerary](screenshots/itinerary.png)
+
+---
+
+## 📌 Admin Dashboard
+
+![Admin Dashboard](screenshots/admin-dashboard.png)
+
+---
+
+# 🎬 Project Demo Video
+
+## 📹 Watch Demo
+
+[▶ Click Here To Watch Demo Video](demo/traveloop-demo.mp4)
+
+---
+
+# 🎨 UI/UX Design
+
+## ✨ Excalidraw Wireframe
+
+https://app.excalidraw.com/l/65VNwvy7c4X/22o30WE3bE4
 
 ---
 
 # 🛠️ Tech Stack
 
-## Frontend
+## 💻 Frontend
+
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap / Tailwind CSS
+- Bootstrap 5
+- Tailwind CSS
 
-## Backend
+---
+
+## ⚙️ Backend
+
 - Python
 - Django
 
-## Database
-- SQLite
-- PostgreSQL / MySQL (Optional)
+---
 
-## APIs & Tools
+## 🗄️ Database
+
+- SQLite
+- PostgreSQL (Optional)
+- MySQL (Optional)
+
+---
+
+## 🔌 APIs & Libraries
+
 - Django ORM
 - Chart.js
 - Google Maps API
@@ -132,11 +195,26 @@ Built as a hackathon project, Traveloop combines intelligent trip organization w
 traveloop/
 │
 ├── accounts/
-├── trips/
+│
 ├── dashboard/
+│
+├── trips/
+│
 ├── templates/
+│
 ├── static/
+│
 ├── media/
+│
+├── screenshots/
+│   ├── dashboard.png
+│   ├── create-trip.png
+│   ├── itinerary.png
+│   └── admin-dashboard.png
+│
+├── demo/
+│   └── traveloop-demo.mp4
+│
 ├── requirements.txt
 ├── manage.py
 └── README.md
@@ -161,21 +239,25 @@ cd traveloop
 python -m venv venv
 ```
 
-### Activate Environment
+---
+
+## 3️⃣ Activate Environment
 
 ### Windows
+
 ```bash
 venv\Scripts\activate
 ```
 
 ### Mac/Linux
+
 ```bash
 source venv/bin/activate
 ```
 
 ---
 
-## 3️⃣ Install Dependencies
+## 4️⃣ Install Dependencies
 
 ```bash
 pip install -r requirements.txt
@@ -183,7 +265,7 @@ pip install -r requirements.txt
 
 ---
 
-## 4️⃣ Run Database Migrations
+## 5️⃣ Run Database Migrations
 
 ```bash
 python manage.py makemigrations
@@ -192,7 +274,7 @@ python manage.py migrate
 
 ---
 
-## 5️⃣ Create Superuser
+## 6️⃣ Create Superuser
 
 ```bash
 python manage.py createsuperuser
@@ -200,7 +282,7 @@ python manage.py createsuperuser
 
 ---
 
-## 6️⃣ Run Server
+## 7️⃣ Run Development Server
 
 ```bash
 python manage.py runserver
@@ -218,7 +300,7 @@ http://127.0.0.1:8000/
 
 # 📊 Database Modules
 
-The project uses a relational database system for managing:
+The system manages:
 
 - Users
 - Trips
@@ -233,13 +315,13 @@ The project uses a relational database system for managing:
 
 # 🎯 Problem Statement
 
-Traveloop solves the challenge of complex travel planning by offering:
+Traveloop solves major travel planning problems through:
 
 ✅ Personalized Trip Planning  
-✅ Budget Tracking  
-✅ Multi-City Itinerary Management  
+✅ Budget Management  
+✅ Multi-City Itinerary Creation  
 ✅ Smart Travel Organization  
-✅ Travel Community Sharing  
+✅ Community-Based Inspiration  
 
 ---
 
@@ -248,23 +330,17 @@ Traveloop solves the challenge of complex travel planning by offering:
 - AI Travel Recommendations
 - Weather Forecast Integration
 - Hotel Booking APIs
-- Flight Booking Integration
-- Real-time Collaboration
-- Offline Access
-- Mobile App Version
+- Flight Booking APIs
+- Real-Time Collaboration
+- Offline Support
+- Mobile Application
 - AI Chat Assistant
 
 ---
 
-# 👥 Team Vision
+# 👨‍💻 Developed For Hackathon
 
-Traveloop aims to become an intelligent and collaborative travel planning ecosystem where users can organize, visualize, and share their journeys seamlessly.
-
----
-
-# 📌 Excalidraw Design Link
-
-https://app.excalidraw.com/l/65VNwvy7c4X/22o30WE3bE4
+Traveloop was developed as a hackathon project focused on creating an intelligent and collaborative travel planning ecosystem using full-stack development.
 
 ---
 
@@ -272,11 +348,13 @@ https://app.excalidraw.com/l/65VNwvy7c4X/22o30WE3bE4
 
 Contributions are welcome!
 
+## Steps
+
 ```bash
-1. Fork the Repository
-2. Create a Feature Branch
+1. Fork Repository
+2. Create Feature Branch
 3. Commit Changes
-4. Push to GitHub
+4. Push Changes
 5. Create Pull Request
 ```
 
@@ -292,12 +370,86 @@ This project is licensed under the MIT License.
 
 If you like this project:
 
-⭐ Star the repository  
-🍴 Fork the project  
-📢 Share with others  
+⭐ Star the Repository  
+🍴 Fork the Project  
+📢 Share with Others  
 
 ---
 
-# 👨‍💻 Developed For Hackathon
+# 👨‍💻 Author
 
-Traveloop was developed as a hackathon project focused on solving real-world travel planning challenges using full-stack development and relational database systems.
+## AYUSH PANDA
+## DEEPAK GOUD
+## MANISH KUSHWAHA
+
+Hackathon Project • Full Stack Developer
+
+---
+
+# 🚀 Upload Images & Video
+
+## 📂 Create Folders
+
+```bash
+traveloop/
+│
+├── screenshots/
+├── demo/
+```
+
+---
+
+## 📸 Add Screenshots
+
+Rename your screenshots:
+
+| OLD NAME | NEW NAME |
+|---|---|
+| Screenshot 2026-05-10 154740.png | dashboard.png |
+| Screenshot 2026-05-10 154754.png | create-trip.png |
+| Screenshot 2026-05-10 154807.png | itinerary.png |
+| Screenshot 2026-05-10 154823.png | admin-dashboard.png |
+
+Move them into:
+
+```bash
+traveloop/screenshots/
+```
+
+---
+
+## 🎥 Add Demo Video
+
+Rename:
+
+```bash
+ODOO.mp4
+```
+
+to:
+
+```bash
+traveloop-demo.mp4
+```
+
+Move into:
+
+```bash
+traveloop/demo/
+```
+
+---
+
+# 🚀 GitHub Push Commands
+
+```bash
+git init
+git add .
+git commit -m "Initial Commit - Traveloop"
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/traveloop.git
+git push -u origin main
+```
+
+---
+
