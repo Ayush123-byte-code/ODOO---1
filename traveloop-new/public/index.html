@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traveloop - Personalized Travel Planning Made Easy</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="animated-bg">
+        <div class="floating-shape shape-1"></div>
+        <div class="floating-shape shape-2"></div>
+        <div class="floating-shape shape-3"></div>
+        <div class="floating-shape shape-4"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="logo" onclick="showScreen('home')">
+                <svg class="logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                <span>Traveloop</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#" onclick="showScreen('home')" class="nav-link active" data-screen="home">Home</a>
+                <a href="#" onclick="showScreen('my-trips')" class="nav-link" data-screen="my-trips">My Trips</a>
+                <a href="#" onclick="showScreen('city-search')" class="nav-link" data-screen="city-search">Explore</a>
+                <a href="#" onclick="showScreen('activities')" class="nav-link" data-screen="activities">Activities</a>
+            </div>
+            <div class="nav-actions">
+                <button class="btn-icon" onclick="showScreen('profile')" title="Profile">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                </button>
+                <button class="btn-primary" id="authBtn" onclick="showScreen('login')">Sign In</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="3" y1="12" x2="21" y2="12"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <line x1="3" y1="18" x2="21" y2="18"/>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        
+        <!-- Login Screen -->
+        <section class="screen login-screen" id="login-screen">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>Welcome Back</h1>
+                        <p>Sign in to continue your journey</p>
+                    </div>
+                    <form class="auth-form" onsubmit="handleLogin(event)">
+                        <div class="form-group">
+                            <label for="loginEmail">Email</label>
+                            <input type="email" id="loginEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="loginPassword">Password</label>
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                        </div>
+                        <div class="form-options">
+                            <label class="checkbox-label">
+                                <input type="checkbox">
+                                <span>Remember me</span>
+                            </label>
+                            <a href="#" class="forgot-link">Forgot Password?</a>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Sign In</button>
+                    </form>
+                    <div class="auth-divider">
+                        <span>or continue with</span>
+                    </div>
+                    <div class="social-login">
+                        <button class="btn-social">
+                            <svg viewBox="0 0 24 24"><path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="currentColor" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="currentColor" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+                            Google
+                        </button>
+                        <button class="btn-social">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.604-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.464-1.11-1.464-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                            GitHub
+                        </button>
+                    </div>
+                    <p class="auth-footer">
+                        Don&apos;t have an account? <a href="#" onclick="showScreen('signup')">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Signup Screen -->
+        <section class="screen signup-screen" id="signup-screen">
+            <div class="auth-container">
+                <div class="auth-card">
+                    <div class="auth-header">
+                        <h1>Create Account</h1>
+                        <p>Start planning your dream trips</p>
+                    </div>
+                    <form class="auth-form" onsubmit="handleSignup(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="signupName">Full Name</label>
+                                <input type="text" id="signupName" placeholder="John Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupEmail">Email</label>
+                            <input type="email" id="signupEmail" placeholder="you@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="signupPassword">Password</label>
+                            <input type="password" id="signupPassword" placeholder="Create a strong password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Create Account</button>
+                    </form>
+                    <p class="auth-footer">
+                        Already have an account? <a href="#" onclick="showScreen('login')">Sign in</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Home/Dashboard Screen -->
+        <section class="screen home-screen active" id="home-screen">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <span class="hero-badge">Plan Your Next Adventure</span>
+                    <h1 class="hero-title">
+                        <span class="title-line">Personalized Travel</span>
+                        <span class="title-line gradient-text">Planning Made Easy</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Design your dream journeys with smart itineraries, budget tracking, and seamless collaboration. Your next adventure starts here.
+                    </p>
+                    <div class="hero-actions">
+                        <button class="btn-primary btn-large" onclick="showScreen('create-trip')">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="12" y1="5" x2="12" y2="19"/>
+                                <line x1="5" y1="12" x2="19" y2="12"/>
+                            </svg>
+                            Plan New Trip
+                        </button>
+                        <button class="btn-secondary btn-large" onclick="showScreen('city-search')">
+                            Explore Destinations
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">500+</span>
+                            <span class="stat-label">Destinations</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10k+</span>
+                            <span class="stat-label">Happy Travelers</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50k+</span>
+                            <span class="stat-label">Trips Planned</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="destination-cards">
+                        <div class="destination-card card-1">
+                            <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=400&h=300&fit=crop" alt="Paris">
+                            <div class="card-overlay">
+                                <h3>Paris</h3>
+                                <p>France</p>
+                            </div>
+                        </div>
+                        <div class="destination-card card-2">
+                            <img src="https://images.unsplash.com/photo-1493976040374-85c8e12f0c0e?w=400&h=300&fit=crop" alt="Tokyo">
+                            <div class="card-overlay">
+                                <h3>Tokyo</h3>
+                                <p>Japan</p>
+                            </div>
+                        </div>
+                        <div class="destination-card card-3">
+                            <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?w=400&h=300&fit=crop" alt="New York">
+                            <div class="card-overlay">
+                                <h3>New York</h3>
+                                <p>USA</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Trips Section -->
+            <div class="section" id="recent-trips">
+                <div class="section-header">
+                    <h2>Your Recent Trips</h2>
+                    <a href="#" onclick="showScreen('my-trips')" class="view-all">View All</a>
+                </div>
+                <div class="trips-grid" id="recentTripsGrid">
+                    <!-- Trips will be dynamically inserted -->
+                </div>
+                <div class="empty-state" id="noTripsState">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        <path d="M9 10h.01M15 10h.01M9.5 15.5s1.5 1 2.5 1 2.5-1 2.5-1"/>
+                    </svg>
+                    <h3>No trips yet</h3>
+                    <p>Start planning your first adventure!</p>
+                    <button class="btn-primary" onclick="showScreen('create-trip')">Create Your First Trip</button>
+                </div>
+            </div>
+
+            <!-- Popular Destinations -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Popular Destinations</h2>
+                    <a href="#" onclick="showScreen('city-search')" class="view-all">Explore More</a>
+                </div>
+                <div class="destinations-grid">
+                    <div class="destination-item" onclick="viewCityDetails('bali')">
+                        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=400&h=300&fit=crop" alt="Bali">
+                        <div class="destination-info">
+                            <h3>Bali</h3>
+                            <p>Indonesia</p>
+                            <span class="cost-index"> ₹1500 Moderate</span>
+                        </div>
+                    </div>
+                    <div class="destination-item" onclick="viewCityDetails('santorini')">
+                        <img src="https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?w=400&h=300&fit=crop" alt="Santorini">
+                        <div class="destination-info">
+                            <h3>Santorini</h3>
+                            <p>Greece</p>
+                            <span class="cost-index">₹3000 Premium</span>
+                        </div>
+                    </div>
+                    <div class="destination-item" onclick="viewCityDetails('dubai')">
+                        <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=400&h=300&fit=crop" alt="Dubai">
+                        <div class="destination-info">
+                            <h3>Dubai</h3>
+                            <p>UAE</p>
+                            <span class="cost-index">₹5000 Luxury</span>
+                        </div>
+                    </div>
+                    <div class="destination-item" onclick="viewCityDetails('barcelona')">
+                        <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?w=400&h=300&fit=crop" alt="Barcelona">
+                        <div class="destination-info">
+                            <h3>Barcelona</h3>
+                            <p>Spain</p>
+                            <span class="cost-index">₹1500 Moderate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Budget Highlights -->
+            <div class="section budget-section">
+                <div class="budget-card">
+                    <div class="budget-header">
+                        <h2>Budget Overview</h2>
+                        <span class="budget-period">This Year</span>
+                    </div>
+                    <div class="budget-stats">
+                        <div class="budget-stat">
+                            <span class="budget-value">₹6000</span>
+                            <span class="budget-label">Total Spent</span>
+                        </div>
+                        <div class="budget-stat">
+                            <span class="budget-value">₹10000</span>
+                            <span class="budget-label">Planned Budget</span>
+                        </div>
+                        <div class="budget-stat">
+                            <span class="budget-value">3</span>
+                            <span class="budget-label">Trips Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Create Trip Screen -->
+        <section class="screen create-trip-screen" id="create-trip-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('home')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Create New Trip</h1>
+            </div>
+            <div class="create-trip-form">
+                <form onsubmit="handleCreateTrip(event)">
+                    <div class="form-section">
+                        <div class="form-group">
+                            <label for="tripName">Trip Name</label>
+                            <input type="text" id="tripName" placeholder="e.g., Summer Europe Adventure" required>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="startDate">Start Date</label>
+                                <input type="date" id="startDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="endDate">End Date</label>
+                                <input type="date" id="endDate" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="tripDescription">Description (Optional)</label>
+                            <textarea id="tripDescription" placeholder="Describe your trip plans, goals, or any special notes..." rows="4"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Cover Photo (Optional)</label>
+                            <div class="upload-area" id="uploadArea">
+                                <input type="file" id="coverPhoto" accept="image/*" hidden>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                                    <polyline points="17,8 12,3 7,8"/>
+                                    <line x1="12" y1="3" x2="12" y2="15"/>
+                                </svg>
+                                <p>Click or drag to upload a cover image</p>
+                            </div>
+                            <img id="coverPreview" class="cover-preview" alt="Cover preview">
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn-secondary" onclick="showScreen('home')">Cancel</button>
+                        <button type="submit" class="btn-primary">Create Trip</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- My Trips Screen -->
+        <section class="screen my-trips-screen" id="my-trips-screen">
+            <div class="page-header">
+                <h1>My Trips</h1>
+                <button class="btn-primary" onclick="showScreen('create-trip')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    New Trip
+                </button>
+            </div>
+            <div class="trips-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                <button class="filter-btn" data-filter="past">Past</button>
+            </div>
+            <div class="trips-list" id="tripsList">
+                <!-- Trips will be dynamically inserted -->
+            </div>
+            <div class="empty-state" id="noTripsMyTrips" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z"/>
+                </svg>
+                <h3>No trips found</h3>
+                <p>Create your first trip and start planning!</p>
+                <button class="btn-primary" onclick="showScreen('create-trip')">Create Trip</button>
+            </div>
+        </section>
+
+        <!-- Itinerary Builder Screen -->
+        <section class="screen itinerary-builder-screen" id="itinerary-builder-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('my-trips')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Trips
+                </button>
+                <h1 id="builderTripName">Trip Itinerary</h1>
+                <div class="header-actions">
+                    <button class="btn-icon" onclick="showScreen('itinerary-view')" title="View Itinerary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </button>
+                    <button class="btn-icon" onclick="showScreen('budget')" title="Budget">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="12" y1="1" x2="12" y2="23"/>
+                            <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div class="itinerary-content">
+                <div class="stops-list" id="stopsList">
+                    <!-- Stops will be dynamically inserted -->
+                </div>
+                <button class="btn-add-stop" onclick="openAddStopModal()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    Add Stop
+                </button>
+            </div>
+        </section>
+
+        <!-- Itinerary View Screen -->
+        <section class="screen itinerary-view-screen" id="itinerary-view-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('itinerary-builder')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back to Builder
+                </button>
+                <h1>Itinerary Overview</h1>
+                <div class="view-toggle">
+                    <button class="toggle-btn active" data-view="timeline">Timeline</button>
+                    <button class="toggle-btn" data-view="list">List</button>
+                </div>
+            </div>
+            <div class="itinerary-timeline" id="itineraryTimeline">
+                <!-- Timeline will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- City Search Screen -->
+        <section class="screen city-search-screen" id="city-search-screen">
+            <div class="page-header">
+                <h1>Explore Destinations</h1>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="citySearch" placeholder="Search cities, countries, or regions..." oninput="handleCitySearch(this.value)">
+                </div>
+                <div class="filter-chips">
+                    <button class="chip active" data-region="all">All</button>
+                    <button class="chip" data-region="europe">Europe</button>
+                    <button class="chip" data-region="asia">Asia</button>
+                    <button class="chip" data-region="americas">Americas</button>
+                    <button class="chip" data-region="africa">Africa</button>
+                    <button class="chip" data-region="oceania">Oceania</button>
+                </div>
+            </div>
+            <div class="cities-grid" id="citiesGrid">
+                <!-- Cities will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- Activity Search Screen -->
+        <section class="screen activities-screen" id="activities-screen">
+            <div class="page-header">
+                <h1>Discover Activities</h1>
+            </div>
+            <div class="search-container">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"/>
+                        <path d="M21 21l-4.35-4.35"/>
+                    </svg>
+                    <input type="text" id="activitySearch" placeholder="Search activities..." oninput="handleActivitySearch(this.value)">
+                </div>
+                <div class="filter-chips">
+                    <button class="chip active" data-type="all">All</button>
+                    <button class="chip" data-type="sightseeing">Sightseeing</button>
+                    <button class="chip" data-type="food">Food & Dining</button>
+                    <button class="chip" data-type="adventure">Adventure</button>
+                    <button class="chip" data-type="culture">Culture</button>
+                    <button class="chip" data-type="nature">Nature</button>
+                </div>
+            </div>
+            <div class="activities-grid" id="activitiesGrid">
+                <!-- Activities will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- Budget & Cost Breakdown Screen -->
+        <section class="screen budget-screen" id="budget-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('itinerary-builder')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Trip Budget</h1>
+            </div>
+            <div class="budget-overview">
+                <div class="budget-total">
+                    <span class="budget-label">Estimated Total</span>
+                    <span class="budget-amount" id="totalBudget">$2,450</span>
+                </div>
+                <div class="budget-daily">
+                    <span class="budget-label">Average Per Day</span>
+                    <span class="budget-amount" id="dailyAverage">$175</span>
+                </div>
+            </div>
+            <div class="budget-breakdown">
+                <h3>Cost Breakdown</h3>
+                <div class="breakdown-chart">
+                    <div class="chart-container">
+                        <canvas id="budgetChart"></canvas>
+                    </div>
+                </div>
+                <div class="breakdown-list">
+                    <div class="breakdown-item">
+                        <div class="breakdown-color" style="background: #10B981;"></div>
+                        <span class="breakdown-category">Transport</span>
+                        <span class="breakdown-amount">$650</span>
+                        <span class="breakdown-percent">27%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-color" style="background: #3B82F6;"></div>
+                        <span class="breakdown-category">Accommodation</span>
+                        <span class="breakdown-amount">$980</span>
+                        <span class="breakdown-percent">40%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-color" style="background: #F59E0B;"></div>
+                        <span class="breakdown-category">Activities</span>
+                        <span class="breakdown-amount">$420</span>
+                        <span class="breakdown-percent">17%</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <div class="breakdown-color" style="background: #EF4444;"></div>
+                        <span class="breakdown-category">Meals</span>
+                        <span class="breakdown-amount">$400</span>
+                        <span class="breakdown-percent">16%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="budget-alerts" id="budgetAlerts">
+                <!-- Budget alerts will be shown here -->
+            </div>
+        </section>
+
+        <!-- Packing Checklist Screen -->
+        <section class="screen packing-screen" id="packing-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('itinerary-builder')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Packing Checklist</h1>
+                <button class="btn-icon" onclick="resetPackingList()" title="Reset Checklist">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 4v6h6M23 20v-6h-6"/>
+                        <path d="M20.49 9A9 9 0 0 0 5.64 5.64L1 10m22 4l-4.64 4.36A9 9 0 0 1 3.51 15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="packing-progress">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="packingProgress" style="width: 0%"></div>
+                </div>
+                <span class="progress-text" id="packingProgressText">0 of 0 items packed</span>
+            </div>
+            <div class="add-item-form">
+                <input type="text" id="newPackItem" placeholder="Add new item...">
+                <select id="packCategory">
+                    <option value="clothing">Clothing</option>
+                    <option value="documents">Documents</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="toiletries">Toiletries</option>
+                    <option value="other">Other</option>
+                </select>
+                <button class="btn-primary" onclick="addPackingItem()">Add</button>
+            </div>
+            <div class="packing-categories" id="packingCategories">
+                <!-- Categories will be dynamically inserted -->
+            </div>
+        </section>
+
+        <!-- Shared/Public Itinerary View -->
+        <section class="screen shared-screen" id="shared-screen">
+            <div class="shared-header">
+                <div class="shared-info">
+                    <h1 id="sharedTripName">Summer European Adventure</h1>
+                    <p class="shared-dates" id="sharedDates">Jul 15 - Jul 30, 2024</p>
+                    <p class="shared-by">Shared by <span id="sharedBy">John Doe</span></p>
+                </div>
+                <div class="shared-actions">
+                    <button class="btn-primary" onclick="copyTrip()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="9" y="9" width="13" height="13" rx="2" ry="2"/>
+                            <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                        </svg>
+                        Copy Trip
+                    </button>
+                    <button class="btn-secondary" onclick="shareToSocial()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="18" cy="5" r="3"/>
+                            <circle cx="6" cy="12" r="3"/>
+                            <circle cx="18" cy="19" r="3"/>
+                            <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                            <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+                        </svg>
+                        Share
+                    </button>
+                </div>
+            </div>
+            <div class="shared-itinerary" id="sharedItinerary">
+                <!-- Shared itinerary will be shown here -->
+            </div>
+        </section>
+
+        <!-- User Profile/Settings Screen -->
+        <section class="screen profile-screen" id="profile-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('home')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Profile & Settings</h1>
+            </div>
+            <div class="profile-content">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop&crop=face" alt="Profile" id="profileImage">
+                        <button class="avatar-edit">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+                                <circle cx="12" cy="13" r="4"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <form class="profile-form" onsubmit="saveProfile(event)">
+                        <div class="form-group">
+                            <label for="profileName">Full Name</label>
+                            <input type="text" id="profileName" value="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileEmail">Email</label>
+                            <input type="email" id="profileEmail" value="john@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="profileLanguage">Language</label>
+                            <select id="profileLanguage">
+                                <option value="en">English</option>
+                                <option value="es">Español</option>
+                                <option value="fr">Français</option>
+                                <option value="de">Deutsch</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="profileCurrency">Preferred Currency</label>
+                            <select id="profileCurrency">
+                                <option value="usd">USD ($)</option>
+                                <option value="eur">EUR (€)</option>
+                                <option value="gbp">GBP (£)</option>
+                                <option value="jpy">JPY (¥)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn-primary btn-full">Save Changes</button>
+                    </form>
+                </div>
+                <div class="settings-section">
+                    <h3>Saved Destinations</h3>
+                    <div class="saved-destinations" id="savedDestinations">
+                        <div class="saved-item">
+                            <span>Paris, France</span>
+                            <button class="btn-remove">&times;</button>
+                        </div>
+                        <div class="saved-item">
+                            <span>Tokyo, Japan</span>
+                            <button class="btn-remove">&times;</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="danger-zone">
+                    <h3>Danger Zone</h3>
+                    <button class="btn-danger" onclick="confirmDeleteAccount()">Delete Account</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trip Notes/Journal Screen -->
+        <section class="screen notes-screen" id="notes-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('itinerary-builder')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Trip Notes</h1>
+                <button class="btn-primary" onclick="addNote()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"/>
+                        <line x1="5" y1="12" x2="19" y2="12"/>
+                    </svg>
+                    Add Note
+                </button>
+            </div>
+            <div class="notes-list" id="notesList">
+                <!-- Notes will be dynamically inserted -->
+            </div>
+            <div class="empty-state" id="noNotesState" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                    <polyline points="14,2 14,8 20,8"/>
+                    <line x1="16" y1="13" x2="8" y2="13"/>
+                    <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
+                <h3>No notes yet</h3>
+                <p>Add notes and reminders for your trip</p>
+            </div>
+        </section>
+
+        <!-- Admin/Analytics Dashboard -->
+        <section class="screen admin-screen" id="admin-screen">
+            <div class="page-header">
+                <button class="btn-back" onclick="showScreen('home')">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 12H5M12 19l-7-7 7-7"/>
+                    </svg>
+                    Back
+                </button>
+                <h1>Admin Dashboard</h1>
+            </div>
+            <div class="admin-grid">
+                <div class="admin-card">
+                    <h3>User Engagement</h3>
+                    <div class="admin-stat">
+                        <span class="stat-value">1,234</span>
+                        <span class="stat-label">Active Users</span>
+                    </div>
+                    <div class="stat-change positive">+12% this week</div>
+                </div>
+                <div class="admin-card">
+                    <h3>Trips Created</h3>
+                    <div class="admin-stat">
+                        <span class="stat-value">5,678</span>
+                        <span class="stat-label">Total Trips</span>
+                    </div>
+                    <div class="stat-change positive">+8% this week</div>
+                </div>
+                <div class="admin-card">
+                    <h3>Top Destinations</h3>
+                    <ul class="top-list">
+                        <li><span>Paris</span><span>432 trips</span></li>
+                        <li><span>Tokyo</span><span>389 trips</span></li>
+                        <li><span>New York</span><span>356 trips</span></li>
+                        <li><span>Bali</span><span>298 trips</span></li>
+                    </ul>
+                </div>
+                <div class="admin-card">
+                    <h3>Popular Activities</h3>
+                    <ul class="top-list">
+                        <li><span>City Tours</span><span>1,203</span></li>
+                        <li><span>Museums</span><span>987</span></li>
+                        <li><span>Food Tours</span><span>876</span></li>
+                        <li><span>Hiking</span><span>654</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="admin-section">
+                <h3>User Management</h3>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>User</th>
+                            <th>Email</th>
+                            <th>Trips</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="usersTable">
+                        <tr>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>5</td>
+                            <td>Jan 15, 2024</td>
+                            <td><button class="btn-small">View</button></td>
+                        </tr>
+                        <tr>
+                            <td>Jane Smith</td>
+                            <td>jane@example.com</td>
+                            <td>8</td>
+                            <td>Feb 20, 2024</td>
+                            <td><button class="btn-small">View</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <!-- Add Stop Modal -->
+    <div class="modal" id="addStopModal">
+        <div class="modal-overlay" onclick="closeModal('addStopModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Stop</h2>
+                <button class="modal-close" onclick="closeModal('addStopModal')">&times;</button>
+            </div>
+            <form onsubmit="addStop(event)">
+                <div class="form-group">
+                    <label for="stopCity">City</label>
+                    <input type="text" id="stopCity" placeholder="Search for a city..." required>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="stopArrival">Arrival Date</label>
+                        <input type="date" id="stopArrival" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="stopDeparture">Departure Date</label>
+                        <input type="date" id="stopDeparture" required>
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('addStopModal')">Cancel</button>
+                    <button type="submit" class="btn-primary">Add Stop</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Add Note Modal -->
+    <div class="modal" id="addNoteModal">
+        <div class="modal-overlay" onclick="closeModal('addNoteModal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add Note</h2>
+                <button class="modal-close" onclick="closeModal('addNoteModal')">&times;</button>
+            </div>
+            <form onsubmit="saveNote(event)">
+                <div class="form-group">
+                    <label for="noteTitle">Title</label>
+                    <input type="text" id="noteTitle" placeholder="Note title..." required>
+                </div>
+                <div class="form-group">
+                    <label for="noteContent">Content</label>
+                    <textarea id="noteContent" placeholder="Write your note here..." rows="6" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="noteStop">Link to Stop (Optional)</label>
+                    <select id="noteStop">
+                        <option value="">Select a stop...</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn-secondary" onclick="closeModal('addNoteModal')">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Note</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <span class="toast-message"></span>
+    </div>
+
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
