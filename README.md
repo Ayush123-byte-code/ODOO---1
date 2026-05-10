@@ -9,10 +9,12 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Django-6.0-green?style=for-the-badge&logo=django">
-  <img src="https://img.shields.io/badge/Python-3.12-blue?style=for-the-badge&logo=python">
-  <img src="https://img.shields.io/badge/Bootstrap-5-purple?style=for-the-badge&logo=bootstrap">
-  <img src="https://img.shields.io/badge/Hackathon-Project-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/HTML5-Frontend-orange?style=for-the-badge&logo=html5">
+  <img src="https://img.shields.io/badge/CSS3-Styling-blue?style=for-the-badge&logo=css3">
+  <img src="https://img.shields.io/badge/JavaScript-ES6-yellow?style=for-the-badge&logo=javascript">
+  <img src="https://img.shields.io/badge/Python-Backend-green?style=for-the-badge&logo=python">
+  <img src="https://img.shields.io/badge/Flask-Web_Framework-black?style=for-the-badge&logo=flask">
+  <img src="https://img.shields.io/badge/SQLite-Database-lightgrey?style=for-the-badge&logo=sqlite">
 </p>
 
 ---
@@ -23,50 +25,50 @@
 
 Traveloop is a modern full-stack travel planning web application that helps users organize trips, manage budgets, discover destinations, create itineraries, and share travel experiences with the community.
 
-Built as a hackathon project using Django, Traveloop focuses on solving real-world travel planning challenges through intelligent organization and user-friendly design.
+Built as a hackathon project, Traveloop focuses on solving real-world travel planning challenges through intelligent organization and user-friendly design.
 
 ---
 
 # 🚀 Features
+
+---
 
 ## 🔐 Authentication System
 
 - User Registration
 - Secure Login & Logout
 - Password Reset
-- User Profile Management
-- Session Authentication
+- Session Management
+- User Profile Handling
 
 ---
 
 ## 🏠 Dashboard
 
 - Personalized Dashboard
-- Recent Trips Overview
-- Budget Highlights
-- Quick Access Features
-- Recommended Destinations
+- Trip Overview
+- Budget Insights
+- Quick Planning Tools
+- Recent Activity Tracking
 
 ---
 
 ## 🧳 Trip Management
 
-- Create Trips
+- Create & Manage Trips
 - Multi-City Itinerary Builder
-- Add Stops & Activities
 - Day-wise Planning
-- Timeline View
-- Edit & Delete Trips
+- Timeline Visualization
+- Add Activities & Stops
 
 ---
 
 ## 📍 Destination & Activity Search
 
-- Explore Destinations
-- Search Activities
-- Activity Categories
-- Budget Filtering
-- Travel Suggestions
+- Search Destinations Worldwide
+- Explore Activities
+- Budget-Based Filtering
+- Smart Suggestions
 
 ---
 
@@ -74,28 +76,27 @@ Built as a hackathon project using Django, Traveloop focuses on solving real-wor
 
 - Expense Tracking
 - Budget Breakdown
-- Daily Cost Calculation
-- Expense Analytics
+- Cost Analytics
+- Expense Visualization
 - Invoice Generation
-- Charts & Statistics
 
 ---
 
 ## 📝 Travel Utilities
 
 - Packing Checklist
-- Travel Journal / Notes
+- Travel Notes & Journals
 - Daily Reminders
-- Checklist Categories
+- Categorized Planning
 
 ---
 
 ## 🌐 Community Features
 
-- Share Trips Publicly
+- Public Trip Sharing
 - Community Feed
-- Travel Inspiration
-- Copy Shared Itineraries
+- Shared Itinerary Access
+- Inspiration Gallery
 
 ---
 
@@ -104,7 +105,6 @@ Built as a hackathon project using Django, Traveloop focuses on solving real-wor
 - User Analytics
 - Platform Statistics
 - Popular Destinations
-- Expense Insights
 - Community Monitoring
 
 ---
@@ -155,56 +155,45 @@ https://app.excalidraw.com/l/65VNwvy7c4X/22o30WE3bE4
 
 # 🛠️ Tech Stack
 
-## 💻 Frontend
+---
 
-- HTML5
-- CSS3
-- JavaScript
-- Bootstrap 5
-- Tailwind CSS
+# 💻 Frontend
+
+| Language / Technology | Purpose |
+|----------------------|----------|
+| **HTML5** | Page structure and semantic markup |
+| **CSS3** | Styling, animations, transitions, flexbox/grid layouts |
+| **JavaScript (ES6+)** | Client-side interactivity, DOM manipulation, API calls |
 
 ---
 
-## ⚙️ Backend
+# ⚙️ Backend
 
-- Python
-- Django
-
----
-
-## 🗄️ Database
-
-- SQLite
-- PostgreSQL (Optional)
-- MySQL (Optional)
+| Language / Technology | Purpose |
+|----------------------|----------|
+| **Python 3** | Backend server-side logic |
+| **Flask** | REST API web framework |
+| **Flask-CORS** | Cross-Origin Resource Sharing |
+| **SQLite3** | Relational database management |
 
 ---
 
-## 🔌 APIs & Libraries
+# 📂 File Structure
 
-- Django ORM
-- Chart.js
-- Google Maps API
-- REST APIs
-
----
-
-# 📂 Project Structure
-
-```bash
+```plaintext
 traveloop/
 │
-├── accounts/
+├── public/
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
+│   └── api.js
 │
-├── dashboard/
-│
-├── trips/
-│
-├── templates/
-│
-├── static/
-│
-├── media/
+├── backend/
+│   ├── app.py
+│   ├── run.py
+│   ├── requirements.txt
+│   └── README.md
 │
 ├── screenshots/
 │   ├── dashboard.png
@@ -215,14 +204,48 @@ traveloop/
 ├── demo/
 │   └── traveloop-demo.mp4
 │
-├── requirements.txt
-├── manage.py
 └── README.md
 ```
 
 ---
 
+# 🚀 Key Features by Language
+
+---
+
+## 🎨 CSS3
+
+- CSS Variables
+- Keyframe Animations
+- Flexbox & Grid Layouts
+- Media Queries
+- Glassmorphism UI Effects
+
+---
+
+## ⚡ JavaScript (ES6+)
+
+- Fetch API
+- LocalStorage
+- Async/Await
+- Event Delegation
+- Dynamic DOM Manipulation
+
+---
+
+## 🐍 Python / Flask
+
+- Flask Route Decorators
+- Session Management
+- Password Hashing
+- SQLite3 Operations
+- JSON Serialization
+
+---
+
 # ⚙️ Installation Guide
+
+---
 
 ## 1️⃣ Clone Repository
 
@@ -241,7 +264,7 @@ python -m venv venv
 
 ---
 
-## 3️⃣ Activate Environment
+## 3️⃣ Activate Virtual Environment
 
 ### Windows
 
@@ -260,41 +283,37 @@ source venv/bin/activate
 ## 4️⃣ Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 
 ---
 
-## 5️⃣ Run Database Migrations
+## 5️⃣ Run Backend Server
 
 ```bash
-python manage.py makemigrations
-python manage.py migrate
+python backend/run.py
 ```
 
 ---
 
-## 6️⃣ Create Superuser
+## 6️⃣ Open Frontend
+
+Open:
 
 ```bash
-python manage.py createsuperuser
+public/index.html
 ```
+
+in browser.
 
 ---
 
-## 7️⃣ Run Development Server
+# 🌐 Local Development URLs
 
-```bash
-python manage.py runserver
-```
-
----
-
-# 🌐 Open Application
-
-```bash
-http://127.0.0.1:8000/
-```
+| Service | URL |
+|---|---|
+| Frontend | http://127.0.0.1:5500 |
+| Backend API | http://127.0.0.1:5000 |
 
 ---
 
@@ -308,39 +327,39 @@ The system manages:
 - Activities
 - Expenses
 - Packing Lists
-- Notes & Journals
+- Journals
 - Shared Itineraries
 
 ---
 
 # 🎯 Problem Statement
 
-Traveloop solves major travel planning problems through:
+Traveloop solves major travel planning challenges through:
 
-✅ Personalized Trip Planning  
+✅ Personalized Travel Planning  
 ✅ Budget Management  
-✅ Multi-City Itinerary Creation  
-✅ Smart Travel Organization  
-✅ Community-Based Inspiration  
+✅ Smart Itinerary Building  
+✅ Multi-City Organization  
+✅ Community Collaboration  
 
 ---
 
 # 🔮 Future Enhancements
 
 - AI Travel Recommendations
-- Weather Forecast Integration
-- Hotel Booking APIs
+- Weather Forecast APIs
+- Hotel Booking Integration
 - Flight Booking APIs
-- Real-Time Collaboration
-- Offline Support
+- Offline Access
 - Mobile Application
-- AI Chat Assistant
+- AI Travel Assistant
+- Real-Time Collaboration
 
 ---
 
 # 👨‍💻 Developed For Hackathon
 
-Traveloop was developed as a hackathon project focused on creating an intelligent and collaborative travel planning ecosystem using full-stack development.
+Traveloop was developed as a hackathon project focused on building an intelligent travel planning ecosystem using full-stack development.
 
 ---
 
@@ -379,31 +398,16 @@ If you like this project:
 # 👨‍💻 Author
 
 ## AYUSH PANDA
-## DEEPAK GOUD
-## MANISH KUSHWAHA
 
-Hackathon Project • Full Stack Developer
+Full Stack Developer • Hackathon Builder
 
 ---
 
-# 🚀 Upload Images & Video
-
-## 📂 Create Folders
-
-```bash
-traveloop/
-│
-├── screenshots/
-├── demo/
-```
-
----
-
-## 📸 Add Screenshots
+# 📸 Upload Screenshots
 
 Rename your screenshots:
 
-| OLD NAME | NEW NAME |
+| Old Name | New Name |
 |---|---|
 | Screenshot 2026-05-10 154740.png | dashboard.png |
 | Screenshot 2026-05-10 154754.png | create-trip.png |
@@ -418,7 +422,7 @@ traveloop/screenshots/
 
 ---
 
-## 🎥 Add Demo Video
+# 🎥 Upload Demo Video
 
 Rename:
 
@@ -453,3 +457,13 @@ git push -u origin main
 
 ---
 
+# 🌟 Final Output
+
+✅ Professional GitHub README  
+✅ Hackathon Ready Repository  
+✅ Screenshots Included  
+✅ Demo Video Included  
+✅ Complete Documentation  
+✅ Attractive UI Presentation  
+
+---
