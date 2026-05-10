@@ -1,7 +1,3 @@
-<p align="center">
-  <img src="screenshots/dashboard.png" width="100%">
-</p>
-
 <h1 align="center">🌍 Traveloop ✈️</h1>
 
 <p align="center">
@@ -109,42 +105,6 @@ Built as a hackathon project, Traveloop focuses on solving real-world travel pla
 
 ---
 
-# 🖼️ Application Screenshots
-
----
-
-## 📌 Dashboard
-
-![Dashboard](screenshots/dashboard.png)
-
----
-
-## 📌 Create Trip
-
-![Create Trip](screenshots/create-trip.png)
-
----
-
-## 📌 Itinerary Planner
-
-![Itinerary](screenshots/itinerary.png)
-
----
-
-## 📌 Admin Dashboard
-
-![Admin Dashboard](screenshots/admin-dashboard.png)
-
----
-
-# 🎬 Project Demo Video
-
-## 📹 Watch Demo
-
-[▶ Click Here To Watch Demo Video](demo/traveloop-demo.mp4)
-
----
-
 # 🎨 UI/UX Design
 
 ## ✨ Excalidraw Wireframe
@@ -194,15 +154,6 @@ traveloop/
 │   ├── run.py
 │   ├── requirements.txt
 │   └── README.md
-│
-├── screenshots/
-│   ├── dashboard.png
-│   ├── create-trip.png
-│   ├── itinerary.png
-│   └── admin-dashboard.png
-│
-├── demo/
-│   └── traveloop-demo.mp4
 │
 └── README.md
 ```
@@ -398,49 +349,9 @@ If you like this project:
 # 👨‍💻 Author
 
 ## AYUSH PANDA
-
+## DEEPAK GOUD
+## MANISH KUSHWAHA
 Full Stack Developer • Hackathon Builder
-
----
-
-# 📸 Upload Screenshots
-
-Rename your screenshots:
-
-| Old Name | New Name |
-|---|---|
-| Screenshot 2026-05-10 154740.png | dashboard.png |
-| Screenshot 2026-05-10 154754.png | create-trip.png |
-| Screenshot 2026-05-10 154807.png | itinerary.png |
-| Screenshot 2026-05-10 154823.png | admin-dashboard.png |
-
-Move them into:
-
-```bash
-traveloop/screenshots/
-```
-
----
-
-# 🎥 Upload Demo Video
-
-Rename:
-
-```bash
-ODOO.mp4
-```
-
-to:
-
-```bash
-traveloop-demo.mp4
-```
-
-Move into:
-
-```bash
-traveloop/demo/
-```
 
 ---
 
@@ -454,16 +365,5 @@ git branch -M main
 git remote add origin https://github.com/YOUR_USERNAME/traveloop.git
 git push -u origin main
 ```
-
----
-
-# 🌟 Final Output
-
-✅ Professional GitHub README  
-✅ Hackathon Ready Repository  
-✅ Screenshots Included  
-✅ Demo Video Included  
-✅ Complete Documentation  
-✅ Attractive UI Presentation  
 
 ---
