@@ -1,7 +1,7 @@
 # 🌍 Traveloop – Personalized Travel Planning Web Application
 
 <p align="center">
-    <img src="https://scontent-bom5-1.xx.fbcdn.net/v/t39.30808-6/301577303_438719704949224_4829468588303680668_n.png?_nc_cat=109&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=kL9YdPKRTYsQ7kNvwFM6fhD&_nc_oc=AdqKp8ilPNumeevWYqSLmT6k6Wp_ftKnFf0eV1xISc-xnpOlpyY4v20F2xhwWLyud3vdpHLXgAjjYeVYuSJvEqnL&_nc_zt=23&_nc_ht=scontent-bom5-1.xx&_nc_gid=zmM-GC7lu9QDaR_Z2bRrdQ&_nc_ss=7b289&oh=00_Af7M31UDj7cHZPsUERBxvoEG8PKKkXfWbRJdiMO69uwjmg&oe=6A05CA18"
+    <img src="images/logo.png"
          width="180"
          height="180"
          alt="Traveloop Logo">
@@ -10,6 +10,20 @@
 <p align="center">
     <b>Plan • Organize • Explore • Travel Smart</b>
 </p>
+
+<p align="center">
+
+![Python](https://img.shields.io/badge/Python-3.14-blue)
+![Django](https://img.shields.io/badge/Django-Framework-green)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+
+</p>
+
+---
+
+![Banner](images/banner.png)
+
 ---
 
 # 📌 Problem Statement
@@ -31,9 +45,10 @@ The platform simplifies travel planning and provides users with a smooth and org
 
 # 📖 Project Overview
 
-Traveloop is a responsive travel planning web application developed using modern web technologies. The system helps travelers organize their complete journey from trip planning to expense management in a single platform.
+Traveloop is a responsive travel planning web application developed using modern web technologies. The platform helps travelers organize their complete journey from trip planning to expense management in a single dashboard.
 
-The application includes:
+### Core Functionalities
+
 - User Authentication System
 - Trip & Destination Management
 - Budget Tracking
@@ -43,49 +58,71 @@ The application includes:
 
 ---
 
-# 🚀 Features
+# 🚀 What Makes Traveloop Unique?
 
-## 🔐 User Authentication
+Unlike traditional travel planning applications, Traveloop combines multiple travel management features into a single centralized platform.
 
+## 🌟 Unique Features
+
+### 🧠 Smart Personalized Travel Planning
+Create customized itineraries based on destinations, schedules, and activities.
+
+### 📍 Multi-City Trip Management
+Manage multiple destinations within one organized travel plan.
+
+### 💰 Integrated Budget Tracking
+Track travel expenses and monitor spending efficiently.
+
+### 🎒 Packing Checklist System
+Maintain travel packing items and organize essentials before departure.
+
+### 📝 Notes & Reminder Management
+Store important reminders, schedules, and travel notes.
+
+### 🔐 Secure Authentication
 - User Signup
 - Secure Login
-- Logout Functionality
-- Session Management
-- Password Validation
-- Confirm Password Checking
+- Session Handling
+- Persistent Login
 
-![Login System](https://images.unsplash.com/photo-1521791136064-7986c2920216)
-
----
-
-## ✈️ Trip Management
-
-- Create Trips
-- Add Multiple Destinations
-- Manage Daily Itinerary
-- Add Activities & Schedules
-
-![Travel Planning](https://images.unsplash.com/photo-1488646953014-85cb44e25828)
+### 📱 Responsive Design
+Optimized for:
+- Desktop
+- Mobile
+- Tablet
 
 ---
 
-## 💰 Budget Tracking
+# ⚡ Workflow of Traveloop
 
-- Expense Monitoring
-- Budget Breakdown
-- Travel Cost Management
-
-![Budget](https://images.unsplash.com/photo-1554224155-6726b3ff858f)
+```text
+User Signup/Login
+        ↓
+Create Personalized Trip
+        ↓
+Add Destinations & Activities
+        ↓
+Manage Itinerary & Schedule
+        ↓
+Track Budget & Expenses
+        ↓
+Maintain Packing Checklist
+        ↓
+Store Travel Notes & Reminders
+```
 
 ---
 
-## 🎒 Packing Checklist
+# 🚀 Features
 
-- Add Packing Items
-- Mark Packed Products
-- Organize by Categories
-
-![Packing](https://images.unsplash.com/photo-1527631746610-bca00a040d60)
+| Feature | Description |
+|---|---|
+| Authentication | Secure login/signup system |
+| Trip Planning | Create and manage trips |
+| Budget Tracking | Monitor travel expenses |
+| Packing Checklist | Organize packing items |
+| Notes System | Save travel notes |
+| Responsive UI | Mobile-friendly interface |
 
 ---
 
@@ -97,7 +134,7 @@ The application includes:
 | Django | Web Framework |
 | HTML | Web Structure |
 | CSS | Styling |
-| Bootstrap | Responsive UI Design |
+| Bootstrap | Responsive UI |
 | JavaScript | Frontend Interactivity |
 | MySQL | Database Management |
 
@@ -126,6 +163,26 @@ traveloop/
 
 ---
 
+# 📸 Application Screenshots
+
+## 🔐 Login Page
+
+![Login Page](images/login.png)
+
+---
+
+## 📊 Dashboard
+
+![Dashboard](images/dashboard.png)
+
+---
+
+## ✈️ Trip Planning
+
+![Trip Planning](images/trip-planning.png)
+
+---
+
 # ⚙️ Installation Guide
 
 ## 1️⃣ Clone Repository
@@ -144,23 +201,16 @@ cd traveloop
 
 ---
 
-## 3️⃣ Install Django
+## 3️⃣ Install Dependencies
 
 ```bash
 python -m pip install django
-```
-
----
-
-## 4️⃣ Install MySQL Connector
-
-```bash
 python -m pip install pymysql
 ```
 
 ---
 
-## 5️⃣ Run Development Server
+## 4️⃣ Run Development Server
 
 ```bash
 python manage.py runserver
@@ -168,59 +218,35 @@ python manage.py runserver
 
 ---
 
-# 🔑 Demo Login Credentials
+# 📋 Requirements
 
-```text
-Username : admin
-Password : admin123
-```
-
----
-
-# 🖥️ Frontend Code Example
-
-## Bootstrap Login Button
-
-```html
-<button class="btn btn-primary w-100">
-    Login
-</button>
-```
+- Python 3.14+
+- Django
+- MySQL
+- Bootstrap 5
+- VS Code / PyCharm
 
 ---
 
-## Bootstrap Card Example
+# 🔥 Key Highlights
 
-```html
-<div class="card shadow p-3">
-    <h3>My Trips</h3>
-    <p>Manage your travel plans easily.</p>
-</div>
-```
-
----
-
-# 📸 Application Screenshots
-
-## 🔐 Login Page
-
-![Login Page](https://images.unsplash.com/photo-1498050108023-c5249f4df085)
+✅ Secure Authentication  
+✅ Multi-City Trip Management  
+✅ Expense Tracking  
+✅ Packing Checklist  
+✅ Responsive Dashboard  
+✅ Beginner-Friendly Architecture  
+✅ Scalable Django Structure  
 
 ---
 
-## 📊 Dashboard
-
-![Dashboard](https://images.unsplash.com/photo-1516321318423-f06f85e504b3)
-
----
-
-# 🌟 Future Enhancements
+# 🌐 Future Enhancements
 
 - 🤖 AI-Based Trip Suggestions
 - 🌦️ Weather Forecast Integration
-- 🗺️ Google Maps API Integration
+- 🗺️ Google Maps API
 - 📈 Expense Analytics Dashboard
-- 📱 Mobile Application Support
+- 📱 Mobile Application
 - 👥 Public Trip Sharing
 
 ---
@@ -233,7 +259,7 @@ Password : admin123
 
 # 📄 License
 
-This project is licensed under the **MIT License**.
+This project is licensed under the MIT License.
 
 ---
 
